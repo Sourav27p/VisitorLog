@@ -4,7 +4,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 import Home from '../Screens/Home';
-import test from '../test';
+import BackGround from '../BackGround';
 import VisitorLog from '../Screens/VisitorLog';
 import LatestNews from '../Screens/LatestNews';
 
@@ -17,6 +17,7 @@ const index = () => {
         <Drawer.Screen name="Home" component={Home} />
         <Drawer.Screen name="Logs" component={VisitorLog} />
         <Drawer.Screen name="Latest News" component={LatestNews} />
+        <Drawer.Screen name="BackGround" component={BackGround} />
       </Drawer.Navigator>
     </NavigationContainer>
   );
