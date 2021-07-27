@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable react-hooks/rules-of-hooks */
 import React, {useEffect} from 'react';
-import {View, Text, Button, StyleSheet} from 'react-native';
+import {View, Text, Button} from 'react-native';
 import BackgroundService from 'react-native-background-actions';
 
 const options = {
@@ -27,6 +27,7 @@ const test = () => {
     const {delay} = taskDataArguments;
     await new Promise(async resolve => {
       for (let i = 0; BackgroundService.isRunning(); i++) {
+        console.log(i);
         await sleep(delay);
       }
     });
@@ -55,7 +56,7 @@ const test = () => {
     callBackHellper();
   }, []);
   return (
-    <View style={styles.screen}>
+    <View>
       <Text>Testing</Text>
       <Button
         title="Stop"
@@ -64,13 +65,6 @@ const test = () => {
     </View>
   );
 };
-const styles = StyleSheet.create({
-  screen: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-});
 export default test;
 
 // You can do anything in your task such as network requests, timers and so on,
